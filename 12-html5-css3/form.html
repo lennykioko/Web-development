@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <title>Lenny-Starter</title>
+    <style>
+        body {
+            font-family: 'Dosis', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="myForm" action="">
+            <p>Autofocus: <input type="text" autofocus></p>
+            <p>Placeholder: <input type="text" placeholder="Enter your name here"></p>
+            <p>Autocomplete Off: <input type="text" autocomplete="off"></p>
+            <p>Required: <input type="text" required></p>
+            <p>Email: <input type="email"></p>
+            <p>Pattern: <input type="text" pattern="[0-9]"></p>
+            <!-- visit HTML5 Pattern for more regexes that can be applied in HTML -->
+
+            <datalist id="valuation">
+                <select>
+                    <option value="Thousand">Thousand</option>
+                    <option value="Million">Million</option>
+                    <option value="Billion">Billion</option>
+                    <option value="Trillion">Trillion</option>
+                </select>
+            </datalist>
+
+            <p>Autocomplete: <input type="text" list="valuation"></p>
+            <p>Multiple file upload: <input type="file" multiple></p>
+            <p><input type="submit" value="Submit Form" formaction="" formmethod="POST"></p>
+
+        </form>
+        <p>Input outside of form: <input form="myForm" type="text"></p>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script></script>
+    
+</body>
+</html>

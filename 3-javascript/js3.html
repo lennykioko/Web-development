@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+    <input id="input" type="text" placeholder="Nuclear Launch Code">
+    <button id="btn">Launch Missile</button>
+
+    <p id="text" style="color: green; font-size: 20px"></p>
+    
+    <script type="application/javascript">
+
+        document.getElementById("btn").onclick = function() {
+            var code = "";
+            code = document.getElementById("input").value;
+            document.getElementById("text").innerHTML = code;
+        }
+
+    </script>
+
+</body>
+</html>

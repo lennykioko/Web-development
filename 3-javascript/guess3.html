@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <p>Choose a number for the computer to guess</p>
+    <p>
+        <select id="input">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <button id="btn">Submit</button>
+    </p>
+    
+    <script type="application/javascript">
+
+        document.getElementById("btn").onclick = function() {
+            var ans = document.getElementById("input").value;
+            correct = false;
+            trials = 1;
+            
+            while (correct == false) {
+                
+                var guess = Math.floor(Math.random() * 6);
+    
+                if (ans == guess) {
+                    
+                    correct = true;
+                    alert("Got it, Answer: " + guess + " Attempts: " + trials);
+                
+                } else {
+                
+                    trials++;
+                
+                }
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

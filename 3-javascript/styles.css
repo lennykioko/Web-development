@@ -1,0 +1,20 @@
+body {
+    font-family: sans-serif;
+}
+
+#shape {
+    width: 200px;
+    height: 200px;
+    background-color: yellowgreen;
+    display: none;
+    position: relative;
+}
+
+.time {
+    font-weight: bold;
+}
+
+#timeTaken {
+    color: greenyellow;
+    font-weight: bold;
+}

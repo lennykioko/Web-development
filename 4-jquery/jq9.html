@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Awesome jQuery UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery-3.3.1.min.js"></script>
+    <link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <style type="text/css">
+        
+        #circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color:goldenrod;
+            margin: 100px auto;
+        }
+        
+        #square {
+            width: 300px;
+            height: 300px;
+            border-radius: 0;
+            background-color:greenyellow;
+            margin: 100px auto;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <div id="circle"></div>
+    <div id="square"></div>
+
+    <script type="text/javascript">
+        $("#circle").draggable();
+        $("#square").droppable({
+            drop: function(event, ui) {
+                alert("Item has been inserted!");
+            }
+        });
+    </script>
+    
+</body>
+</html>

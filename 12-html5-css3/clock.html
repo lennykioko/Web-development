@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <title>Clock-Awesome</title>
+    <style>
+        body {
+            font-family: 'Dosis', sans-serif;
+            background-color: floralwhite;
+            font-size: 20px;
+        }
+        
+        .container {
+            text-align: center;
+        }
+        
+        h4 {
+            margin-top: 20px;
+            color: goldenrod;
+        }
+        
+        #clock {
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4>Time is man's most valuable commodity</h4>
+        <canvas width="350" height="350" id="clock">
+            Sorry, your browser does not support canvas, consider upgrading.
+        </canvas>
+        
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+        
+        function setTime() {
+            
+            var canvas = document.getElementById("clock");
+            var context = canvas.getContext("2d");
+            var clockRadius = canvas.width/2;
+
+            context.beginPath();
+            context.fillStyle = "black";
+            context.arc(clockRadius, clockRadius, clockRadius, 0, 2*Math.PI);
+            context.fill();
+
+            context.fillStyle = "white";
+
+            context.beginPath();
+            context.arc(clockRadius, clockRadius, 10, 0, 2*Math.PI);
+            context.fill();
+
+            context.font = clockRadius / 10 + "px Dosis";
+            context.textAlign = "center";
+            context.textBaseline = "middle";
+
+            for (var i = 1; i <= 12; i++) {
+                context.fillText(i, clockRadius + clockRadius * 0.9 * Math.sin(i * 2 * Math.PI / 12), clockRadius - (clockRadius * 0.9 * Math.cos(i * 2 * Math.PI / 12)));
+            }
+
+            var hours = new Date().getHours();
+            var minutes = new Date().getMinutes();
+            var seconds = new Date().getSeconds();
+
+            var fullHours = hours % 12 + minutes / 60 + seconds / 3600;
+
+            var hoursAngle = fullHours * 2 * Math.PI / 12;
+            var minutesAngle = minutes * 2 * Math.PI / 60;
+            var secondsAngle = seconds * 2 * Math.PI / 60;
+
+            context.strokeStyle = "white";
+            context.moveTo(clockRadius, clockRadius);
+            context.lineTo(clockRadius + clockRadius * 0.6 * Math.sin(hoursAngle), clockRadius - (clockRadius * 0.6 * Math.cos(hoursAngle)));
+            context.lineWidth = 5;
+            context.stroke();    
+
+            context.moveTo(clockRadius, clockRadius);
+            context.lineTo(clockRadius + clockRadius * 0.8 * Math.sin(minutesAngle), clockRadius - (clockRadius * 0.8 * Math.cos(minutesAngle)));
+            context.lineWidth = 3;
+            context.stroke(); 
+
+            context.moveTo(clockRadius, clockRadius);
+            context.lineTo(clockRadius + clockRadius * 0.9 * Math.sin(secondsAngle), clockRadius - (clockRadius * 0.9 * Math.cos(secondsAngle)));
+            context.lineWidth = 2;
+            context.stroke();
+        }
+        
+        
+        setInterval(setTime, 1000);
+
+    
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

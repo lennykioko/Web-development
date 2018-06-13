@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Awesome jQuery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        
+        #circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color:gold;
+            margin: 100px auto;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div id="circle"></div>
+
+    <script type="text/javascript">
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF'.split('');
+            var color = '#';
+            for (var i = 0; i < 6; i++ ) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+
+            return color;
+        }
+        
+        $("#circle").click(function() {
+            $(this).css("background-color", getRandomColor());
+        });
+        
+    </script>
+    
+</body>
+</html>

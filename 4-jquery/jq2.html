@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Awesome jQuery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <script src="jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        
+        #circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color:gold;
+            margin: 20px;
+            float: left;
+        }
+        
+        #text {
+            position: relative;
+            top: 50px;
+            color:darkgoldenrod;
+            font-family: 'Dosis', sans-serif;
+        }
+        
+        .clear {
+            clear: both;
+        }
+        
+        #video {
+            width: 300px;
+            height: 200px;
+            margin: 30px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div id="circle"></div>
+    <p id="text">Genre: <span>Movie</span></p>
+    <div class="clear"></div>
+    <iframe id="video" src="https://www.youtube.com/embed/dEuT_S9Smbc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    
+    <script type="text/javascript">
+        
+        $("#circle").click(function() {
+            $("span").html("Football");
+            $("iframe").attr("src", "https://www.youtube.com/embed/MCIwK3B_Atc");
+        });
+        
+    </script>
+    
+</body>
+</html>

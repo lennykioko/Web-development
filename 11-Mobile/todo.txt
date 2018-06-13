@@ -1,0 +1,1 @@
+Ensure you do this section since you will be creating a simple app using HTML, CSS and JS
